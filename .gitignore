@@ -4,6 +4,7 @@
 *.log
 *.fasl
 *.lx64fsl
+*.port
 
 # Lisp compilation
 *.o
