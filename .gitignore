@@ -1,0 +1,20 @@
+# ACL2 build artifacts
+*.cert
+*.out
+*.log
+*.fasl
+*.lx64fsl
+
+# Lisp compilation
+*.o
+*.so
+*.dylib
+
+# Editor files
+*~
+\#*\#
+.\#*
+.DS_Store
+
+# Temporary files
+/tmp/
