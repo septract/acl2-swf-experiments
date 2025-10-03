@@ -44,16 +44,21 @@ Theorems about Natural Numbers:
 **Location**: `experiments/arithmetic/experiment-03-basics.lisp`
 **Note**: ACL2 doesn't have Coq's successor function (S), so `plus_1_l` adapted to commutativity
 
-### 📋 Chapter 5: Polymorphism (Poly) - NEXT TARGET
+### ✅ Chapter 5: Polymorphism (Poly) - COMPLETED
 
 Higher-order function theorems:
-- [ ] `map_rev`: map f (rev l) = rev (map f l)
-- [ ] `fold_length`: Proving fold-based length function correct
-- [ ] `flat_map`: Properties of flatMap operation
-- [ ] Theorems about `filter`, `map`, `fold`
+- [x] `map_rev`: map f (rev l) = rev (map f l)
+- [x] `fold_length`: Proving fold-based length function correct
+- [x] `flat_map`: Properties of flatMap operation
+- [x] Theorems about `filter`, `map`, `fold`
+  - map preserves length, distributes over append and reverse
+  - filter length bounds, idempotence, distributes over append
+  - fold_sum and fold_length correctness
+  - Interaction between map and fold
 
-**Suggested location**: `experiments/lists/experiment-02-higher-order.lisp`
-**Challenge**: ACL2 handles polymorphism differently from Coq - may need to prove for specific types
+**Location**: `experiments/lists/experiment-02-higher-order.lisp`
+**Key techniques learned**: Helper lemmas about `revappend`, concrete types instead of polymorphism
+**Note**: `fold-product-append` theorem commented out - needs complex arithmetic lemmas
 
 ### 📋 Chapter 7: Logic
 
@@ -119,11 +124,12 @@ Data structure theorems:
 
 ## Progress Tracking
 
-- **Completed**: 20 theorems (14 arithmetic, 6 list)
+- **Completed**: 47 theorems (14 arithmetic, 33 list)
   - Induction chapter: 6 theorems ✅
   - Lists chapter: 6 theorems ✅
   - Basics chapter: 8 theorems ✅
-- **Next target**: Polymorphism chapter (higher-order functions)
+  - Polymorphism chapter: 27 theorems ✅
+- **Next target**: Chapter 7 (Logic) or Chapter 8 (Inductively Defined Propositions)
 - **Total chapters to cover**: ~6-8 core chapters
 
 ## Notes on ACL2 vs Coq
