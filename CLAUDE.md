@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This repository contains small proof experiments using the ACL2 theorem prover. The goal is to explore ACL2's capabilities through focused, isolated experiments rather than building a single large system.
 
+**Current focus**: Working through theorems from Software Foundations Book 1 (Logical Foundations), adapting Coq proofs to ACL2. See [notes/swf-progression-plan.md](notes/swf-progression-plan.md) for the roadmap and progress tracking.
+
 ## Project Structure
 
 - **experiments/** - Experiments organized by topic (arithmetic, lists, logic, data-structures)
