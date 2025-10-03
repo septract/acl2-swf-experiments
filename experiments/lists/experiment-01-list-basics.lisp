@@ -3,6 +3,9 @@
 ;
 ; These theorems parallel the Coq proofs in the Lists chapter,
 ; adapted for ACL2's list operations.
+;
+; All theorems now prove successfully using helper lemmas about revappend
+; and careful theory control to avoid rewrite loops.
 
 (in-package "ACL2")
 
@@ -70,13 +73,23 @@
            (equal (reverse (append l1 l2))
                   (append (reverse l2) (reverse l1)))))
 
+; Helper lemma for rev-involutive: double revappend
+; From ACL2 documentation: revappend-revappend theorem
+; Need to disable lemmas that might cause loops
+(local
+ (defthm revappend-revappend
+   (equal (revappend (revappend x y) z)
+          (revappend y (append x z)))
+   :hints (("Goal" :in-theory (disable revappend-is-append-reverse
+                                        revappend-of-append-lists)))))
+
 ; Theorem rev_involutive: ∀ l, rev(rev(l)) = l
 ; Source: Software Foundations Lists.v, rev_involutive
-; TODO: Requires additional lemmas about revappend-revappend - left as future exercise
-(skip-proofs
- (defthm rev-involutive
-   (implies (true-listp l)
-            (equal (reverse (reverse l)) l))))
+; Must disable revappend-is-append-reverse to avoid rewrite loops
+(defthm rev-involutive
+  (implies (true-listp l)
+           (equal (reverse (reverse l)) l))
+  :hints (("Goal" :in-theory (disable revappend-is-append-reverse))))
 
 ; Additional theorem: append with nil on right
 ; This is implicit in Software Foundations but useful in ACL2
