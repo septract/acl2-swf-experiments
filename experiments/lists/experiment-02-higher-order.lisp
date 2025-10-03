@@ -176,18 +176,10 @@
 
 ; Theorem: fold-product of append
 ; This theorem requires advanced arithmetic reasoning about associativity and
-; commutativity of multiplication. The proof reduces to showing:
-;   (* x y z) = (* y z x)
-; which requires multiple applications of associativity and commutativity.
-; While this can be proved with explicit :use hints referencing instances of
-; associativity-of-* and commutativity-of-*, the rewriter doesn't automatically
-; apply these transformations deep enough to complete the proof.
-; This is a known challenge in automated theorem proving - left as future work.
-; (defthm fold-product-append
-;   (implies (and (nat-listp l1)
-;                 (nat-listp l2))
-;            (equal (fold-product (append l1 l2))
-;                   (* (fold-product l1) (fold-product l2)))))
+; commutativity of multiplication. The proof succeeds using selective theory
+; control: disabling commutativity-of-* globally, then re-enabling it at the
+; specific subgoal where arithmetic reasoning is needed.
+; See experiment-02-higher-order-product.lisp for the complete proof.
 
 ;;; ==========================================================================
 ;;; Interaction between Map and Fold

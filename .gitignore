@@ -17,5 +17,8 @@
 .\#*
 .DS_Store
 
+# IDE and tool directories
+.claude/
+
 # Temporary files
 /tmp/
