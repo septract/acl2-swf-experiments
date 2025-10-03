@@ -29,18 +29,22 @@ Source: https://softwarefoundations.cis.upenn.edu/lf-current/
 **Location**: `experiments/lists/experiment-01-list-basics.lisp`
 **Key techniques learned**: Helper lemmas about `revappend`, theory control with `:in-theory (disable ...)`
 
-### 📋 Chapter 2: Basics - NEXT TARGET
+### ✅ Chapter 2: Basics - COMPLETED
 
 Theorems about Natural Numbers:
-- [ ] `plus_O_n`: 0 + n = n
-- [ ] `plus_1_l`: 1 + n = S n
-- [ ] `mult_0_l`: 0 * n = 0
-- [ ] `mult_n_1`: n * 1 = n
-- [ ] `plus_id_example`: Properties of addition identities
+- [x] `plus_O_n`: 0 + n = n
+- [x] `plus_1_l`: 1 + n = n + 1 (adapted for ACL2)
+- [x] `mult_0_l`: 0 * n = 0
+- [x] `mult_n_1`: n * 1 = n
+- [x] `mult_1_n`: 1 * n = n (additional)
+- [x] `mult_2_n`: 2 * n = n + n (additional)
+- [x] `mult_comm`: n * m = m * n (additional)
+- [x] `mult_assoc`: n * (m * p) = (n * m) * p (additional)
 
-**Suggested location**: `experiments/arithmetic/experiment-03-basics.lisp`
+**Location**: `experiments/arithmetic/experiment-03-basics.lisp`
+**Note**: ACL2 doesn't have Coq's successor function (S), so `plus_1_l` adapted to commutativity
 
-### 📋 Chapter 5: Polymorphism (Poly)
+### 📋 Chapter 5: Polymorphism (Poly) - NEXT TARGET
 
 Higher-order function theorems:
 - [ ] `map_rev`: map f (rev l) = rev (map f l)
@@ -115,8 +119,11 @@ Data structure theorems:
 
 ## Progress Tracking
 
-- **Completed**: 12 theorems (6 arithmetic, 6 list)
-- **Next target**: Basics chapter (5-10 more theorems)
+- **Completed**: 20 theorems (14 arithmetic, 6 list)
+  - Induction chapter: 6 theorems ✅
+  - Lists chapter: 6 theorems ✅
+  - Basics chapter: 8 theorems ✅
+- **Next target**: Polymorphism chapter (higher-order functions)
 - **Total chapters to cover**: ~6-8 core chapters
 
 ## Notes on ACL2 vs Coq
