@@ -17,7 +17,7 @@ A collection of theorem-proving experiments using the [ACL2](https://www.cs.utex
 - ✅ Chapter 4: Lists (list operations and properties)
 - ✅ Chapter 5: Polymorphism (higher-order functions: map, filter, fold)
 
-**Total Theorems Proved:** 48+
+**Total Theorems Proved:** 50+
 
 See [notes/swf-progression-plan.md](notes/swf-progression-plan.md) for detailed roadmap.
 

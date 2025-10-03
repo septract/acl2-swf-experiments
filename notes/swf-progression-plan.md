@@ -40,6 +40,8 @@ Theorems about Natural Numbers:
 - [x] `mult_2_n`: 2 * n = n + n (additional)
 - [x] `mult_comm`: n * m = m * n (additional)
 - [x] `mult_assoc`: n * (m * p) = (n * m) * p (additional)
+- [x] `mult_plus_distr_l`: n * (m + p) = n * m + n * p (distributivity - left)
+- [x] `mult_plus_distr_r`: (m + p) * n = m * n + p * n (distributivity - right)
 
 **Location**: `experiments/arithmetic/experiment-03-basics.lisp`
 **Note**: ACL2 doesn't have Coq's successor function (S), so `plus_1_l` adapted to commutativity
@@ -124,11 +126,11 @@ Data structure theorems:
 
 ## Progress Tracking
 
-- **Completed**: 47 theorems (14 arithmetic, 33 list)
+- **Completed**: 50+ theorems (16 arithmetic, 34 list)
   - Induction chapter: 6 theorems ✅
   - Lists chapter: 6 theorems ✅
-  - Basics chapter: 8 theorems ✅
-  - Polymorphism chapter: 27 theorems ✅
+  - Basics chapter: 10 theorems ✅ (added distributivity)
+  - Polymorphism chapter: 28 theorems ✅ (added fold-product-append)
 - **Next target**: Chapter 7 (Logic) or Chapter 8 (Inductively Defined Propositions)
 - **Total chapters to cover**: ~6-8 core chapters
 

@@ -58,3 +58,21 @@
                 (acl2-numberp p))
            (equal (* n (* m p))
                   (* (* n m) p))))
+
+; Theorem: distributivity of multiplication over addition (left)
+; ∀ n m p, n * (m + p) = n * m + n * p
+(defthm mult-plus-distr-l
+  (implies (and (acl2-numberp n)
+                (acl2-numberp m)
+                (acl2-numberp p))
+           (equal (* n (+ m p))
+                  (+ (* n m) (* n p)))))
+
+; Theorem: distributivity of multiplication over addition (right)
+; ∀ n m p, (m + p) * n = m * n + p * n
+(defthm mult-plus-distr-r
+  (implies (and (acl2-numberp n)
+                (acl2-numberp m)
+                (acl2-numberp p))
+           (equal (* (+ m p) n)
+                  (+ (* m n) (* p n)))))
