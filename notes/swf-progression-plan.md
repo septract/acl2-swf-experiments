@@ -62,6 +62,35 @@ Higher-order function theorems:
 **Key techniques learned**: Helper lemmas about `revappend`, concrete types instead of polymorphism
 **Note**: `fold-product-append` theorem commented out - needs complex arithmetic lemmas
 
+### 🎯 Challenge Problems (3-4 star exercises from Chapters 2-5)
+
+**Real Challenges** (require non-trivial proof effort in ACL2):
+- [ ] **Binary Numbers** ★★★★ HARD (Induction ch.) - 4 theorems
+  - Custom data type requires termination proofs and careful reasoning
+  - Round-trip conversion properties, normalization, arithmetic
+  - Location: `experiments/challenge-problems.lisp`
+- [ ] **Function Injectivity** ★★★☆ MODERATE (Lists ch.) - 2 theorems
+  - Prove reverse is injective, general involution theorem
+  - Requires reasoning about function inverses
+  - Location: `experiments/challenge-problems.lisp`
+
+**Trivial Exercises** (solved automatically by ACL2, moved to separate file):
+- [x] **Bag Operations** ★☆☆☆ - 3 theorems PROVED automatically (no hints)
+- [x] **List Interleaving** ★☆☆☆ - 2 PROVED automatically, 1 discovered FALSE
+- Location: `experiments/trivial-swf-exercises.lisp`
+- Value: Demonstrates power of ACL2 automation vs manual SWF reasoning
+
+**Excluded** (can't be properly encoded in ACL2):
+- Church Numerals - Requires polymorphic higher-order functions
+- Currying/Uncurrying - Requires lambdas in theorem statements
+
+**Status**: ✅ REORGANIZED - Separated genuine challenges from trivial exercises
+**Key insights**:
+- SWF's pedagogical exercises may be trivial with ACL2's automation
+- Custom data types (binary) are genuinely harder than built-in types
+- Formal proofs caught 2 false theorems that seemed plausible!
+- Higher-order function exercises don't translate well to ACL2
+
 ### 📋 Chapter 7: Logic
 
 Logical connectives and reasoning:
