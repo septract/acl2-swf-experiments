@@ -245,18 +245,32 @@
 ;; 2. Function Injectivity (2 theorems): ★★★☆ MODERATE
 ;;    - Reasoning about function inverses
 ;;    - Good practice with bidirectional equality reasoning
-;;    - General involution theorem is advanced
+;;    - Involution theorem requires insight
 ;;
-;; OTHER SWF EXERCISES NOT INCLUDED:
-;; - Bags, Interleaving: Trivial (see trivial-swf-exercises.lisp)
-;; - Church Numerals: Can't encode properly in ACL2
-;; - Currying: Can't state properly in ACL2
+;; TOTAL: 6 genuine challenge theorems
+;;
+;; LESSONS LEARNED ABOUT DIFFICULTY:
+;; - Custom encodings DON'T automatically bypass automation!
+;; - Peano arithmetic with custom types: Still TRIVIAL (proved automatically)
+;; - Permutation relation: Also TRIVIAL (proved automatically)
+;; - What matters: REASONING COMPLEXITY, not built-in vs custom types
+;; - ACL2's induction heuristics work on ANY structurally recursive definition
+;;
+;; MOVED TO TRIVIAL FILE (proved automatically with 0 hints):
+;; - Bags, Interleaving: Trivial with built-in lists
+;; - Peano arithmetic: Trivial even with custom encoding!
+;; - Permutation: Trivial with computational definition
+;; See: experiments/trivial-swf-exercises.lisp
+;;
+;; EXCLUDED (can't encode properly in ACL2):
+;; - Church Numerals: Requires polymorphic higher-order functions
+;; - Currying: Requires lambdas in theorem statements
 ;;
 ;; NEXT STEPS:
-;; 1. Attempt binary number theorems (work through dependencies)
-;; 2. Prove reverse injectivity (good warm-up for involution)
-;; 3. Tackle general involution theorem if interested in advanced techniques
+;; 1. Attempt binary number theorems (genuinely hard)
+;; 2. Prove reverse injectivity (good moderate challenge)
+;; 3. Tackle involution theorem (requires insight)
 ;;
-;; Good luck! These are genuine proof challenges that require thought,
-;; helper lemmas, and understanding of ACL2's proof strategies.
+;; These are the REAL challenges - they require thought, helper lemmas,
+;; and understanding of ACL2's proof strategies.
 ;; =============================================================================
