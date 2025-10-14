@@ -70,10 +70,22 @@ Load an experiment:
 (include-book "experiments/lists/experiment-01-list-basics")
 ```
 
-Certify a book (verify all proofs):
+### Certifying Books
+
+Use the Makefile to certify ACL2 books (verify all proofs):
+
 ```bash
-cert.pl experiments/lists/experiment-01-list-basics.lisp
+# Certify all out-of-date books
+make certify
+
+# Check which books need certification
+make check-cert
+
+# Certify a specific book
+make experiments/lists/experiment-01-list-basics.cert
 ```
+
+The Makefile automatically handles dependencies (e.g., `include-book` statements) and only recertifies books when the source `.lisp` file is newer than the `.cert` file.
 
 ### Working with Jupyter Notebooks
 

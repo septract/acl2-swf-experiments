@@ -12,8 +12,14 @@ The easiest way to keep notebooks up-to-date is using the Makefile in the projec
 # Convert all out-of-date notebooks
 make
 
+# Certify all out-of-date ACL2 books
+make certify
+
 # Check which notebooks need updating
 make check
+
+# Check which books need certification
+make check-cert
 
 # Show status of all notebooks
 make list
@@ -21,13 +27,17 @@ make list
 # Build a specific notebook
 make experiments/lists/experiment-02-higher-order.ipynb
 
+# Certify a specific book
+make experiments/lists/experiment-02-higher-order.cert
+
 # See all available targets
 make help
 ```
 
 The Makefile automatically:
 - Only rebuilds notebooks when the `.lisp` file is newer than the `.ipynb` file
-- Tracks dependencies on the converter script
+- Only recertifies books when the `.lisp` file is newer than the `.cert` file
+- Tracks dependencies on the converter script and included books
 - Skips files in `.ipynb_checkpoints/` directories
 
 ### Direct Python Script Usage
