@@ -4,7 +4,37 @@ Scripts to convert ACL2 `.lisp` files into Jupyter `.ipynb` notebooks.
 
 ## Usage
 
-### Convert a single file
+### Using Make (Recommended)
+
+The easiest way to keep notebooks up-to-date is using the Makefile in the project root:
+
+```bash
+# Convert all out-of-date notebooks
+make
+
+# Check which notebooks need updating
+make check
+
+# Show status of all notebooks
+make list
+
+# Build a specific notebook
+make experiments/lists/experiment-02-higher-order.ipynb
+
+# See all available targets
+make help
+```
+
+The Makefile automatically:
+- Only rebuilds notebooks when the `.lisp` file is newer than the `.ipynb` file
+- Tracks dependencies on the converter script
+- Skips files in `.ipynb_checkpoints/` directories
+
+### Direct Python Script Usage
+
+For more control, you can use the Python script directly:
+
+#### Convert a single file
 
 ```bash
 python3 utils/lisp_to_ipynb.py <input.lisp> [output.ipynb]
@@ -19,25 +49,10 @@ python3 utils/lisp_to_ipynb.py experiments/lists/experiment-02-higher-order.lisp
 python3 utils/lisp_to_ipynb.py input.lisp custom-output.ipynb
 ```
 
-### Convert multiple files
+#### Convert multiple files
 
 ```bash
 python3 utils/lisp_to_ipynb.py file1.lisp file2.lisp file3.lisp
-```
-
-### Convert all .lisp files in a directory
-
-```bash
-./utils/convert_all_lisp.sh [directory]
-```
-
-Examples:
-```bash
-# Convert all .lisp files in current directory
-./utils/convert_all_lisp.sh
-
-# Convert all .lisp files in a specific directory
-./utils/convert_all_lisp.sh experiments/arithmetic
 ```
 
 ## Conversion Rules

@@ -75,6 +75,23 @@ Certify a book (verify all proofs):
 cert.pl experiments/lists/experiment-01-list-basics.lisp
 ```
 
+### Working with Jupyter Notebooks
+
+The `.lisp` files can be viewed and edited as Jupyter notebooks (`.ipynb`). Use the Makefile to keep notebooks in sync:
+
+```bash
+# Convert all out-of-date .lisp files to .ipynb
+make
+
+# Check which notebooks need updating
+make check
+
+# Show status of all notebooks
+make list
+```
+
+See [utils/README_CONVERTER.md](utils/README_CONVERTER.md) for detailed converter documentation.
+
 ## Resources
 
 - [ACL2 Homepage](https://www.cs.utexas.edu/~moore/acl2/)
