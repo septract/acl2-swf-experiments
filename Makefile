@@ -46,7 +46,7 @@ clean:
 .PHONY: clean-cert
 clean-cert:
 	@echo "Removing all .cert files and ACL2 output..."
-	@find experiments -type f \( -name "*.cert" -o -name "*.out" -o -name "*.time" -o -name "*.port" \) -delete
+	@find experiments -type f \( -name "*.cert" -o -name "*.out" -o -name "*.time" -o -name "*.port" -o -name "*.fasl" \) -delete
 	@echo "Done!"
 
 # Clean everything: notebooks and certificates
