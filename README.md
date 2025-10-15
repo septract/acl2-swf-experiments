@@ -70,9 +70,14 @@ Load an experiment:
 (include-book "experiments/lists/experiment-01-list-basics")
 ```
 
-### Certifying Books
+### Certifying Books (verify/prove all theorems)
 
-Use the Makefile to certify ACL2 books (verify all proofs):
+Use the ACL2 [`cert.pl`](https://acl2.org/doc/?topic=BUILD____CERT.PL) script to certify (verify all proofs) one book.
+```bash
+cert.pl experiments/lists/experiment-01-list-basics.lisp
+```
+
+Use the Makefile to certify ACL2 books:
 
 ```bash
 # Certify all out-of-date books
