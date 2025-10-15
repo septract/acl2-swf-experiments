@@ -114,7 +114,7 @@ help:
 	@echo "Makefile for ACL2 .lisp to .ipynb conversion and book certification"
 	@echo ""
 	@echo "Notebook Targets:"
-	@echo "  make all        - Convert all out-of-date .lisp files to .ipynb (default)"
+	@echo "  make all        - Convert all updated .lisp files to .ipynb (default)"
 	@echo "  make clean      - Remove all generated .ipynb files"
 	@echo "  make check      - Show only out-of-date or missing notebooks"
 	@echo "  make list       - Show all .lisp files and their notebook status"

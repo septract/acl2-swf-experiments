@@ -83,6 +83,9 @@ make check-cert
 
 # Certify a specific book
 make experiments/lists/experiment-01-list-basics.cert
+
+# Remove certification files (*.cert, .port, .fasl)
+make clean-cert
 ```
 
 The Makefile automatically handles dependencies (e.g., `include-book` statements) and only recertifies books when the source `.lisp` file is newer than the `.cert` file.
@@ -92,7 +95,7 @@ The Makefile automatically handles dependencies (e.g., `include-book` statements
 The `.lisp` files can be viewed and edited as Jupyter notebooks (`.ipynb`). Use the Makefile to keep notebooks in sync:
 
 ```bash
-# Convert all out-of-date .lisp files to .ipynb
+# Convert all updated .lisp files to .ipynb
 make
 
 # Check which notebooks need updating
@@ -104,12 +107,25 @@ make list
 
 See [utils/README_CONVERTER.md](utils/README_CONVERTER.md) for detailed converter documentation.
 
+#### Save notebook to executable script (.ipynb to .lisp)
+You can use the JupyterLab "File > Save & Export ... > As Executable Script" command to save a notebook as a .lisp file.
+
+<img src="utils/image.png" alt="JupyterLab 'File > Save & Export ... > As Executable Script' menu screenshot" width="25%">
+
+### Running ACL2 and Jupyter with prebuilt Docker image
+
+.devcontainer/devcontainer.json is configured to run ghcr.io/jimwhite/acl2-jupyter:latest which is built by https://github.com/jimwhite/acl2-jupyter.
+
+Detailed how to instructions for running in GitHub Codespaces (for free!) are at https://github.com/jimwhite/acl2-jupyter?tab=readme-ov-file#using-a-prebuilt-image-in-a-github-codespace-free
+
+
 ## Resources
 
 - [ACL2 Homepage](https://www.cs.utexas.edu/~moore/acl2/)
 - [ACL2 Manual](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/)
 - [Software Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/)
 - [Quick Reference](notes/acl2-quick-reference.md) - Local guide to common ACL2 patterns
+- [ACL2-Jupyter Docker Image](https://github.com/jimwhite/acl2-jupyter) - GitHub project that builds the image for the devcontainer
 
 ## License
 
