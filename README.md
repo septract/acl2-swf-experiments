@@ -70,10 +70,59 @@ Load an experiment:
 (include-book "experiments/lists/experiment-01-list-basics")
 ```
 
-Certify a book (verify all proofs):
+### Certifying Books (verify/prove all theorems)
+
+Use the ACL2 [`cert.pl`](https://acl2.org/doc/?topic=BUILD____CERT.PL) script to certify (verify all proofs) one book.
 ```bash
 cert.pl experiments/lists/experiment-01-list-basics.lisp
 ```
+
+Use the Makefile to certify ACL2 books:
+
+```bash
+# Certify all out-of-date books
+make certify
+
+# Check which books need certification
+make check-cert
+
+# Certify a specific book
+make experiments/lists/experiment-01-list-basics.cert
+
+# Remove certification files (*.cert, .port, .fasl)
+make clean-cert
+```
+
+The Makefile automatically handles dependencies (e.g., `include-book` statements) and only recertifies books when the source `.lisp` file is newer than the `.cert` file.
+
+### Working with Jupyter Notebooks
+
+The `.lisp` files can be viewed and edited as Jupyter notebooks (`.ipynb`). Use the Makefile to keep notebooks in sync:
+
+```bash
+# Convert all updated .lisp files to .ipynb
+make
+
+# Check which notebooks need updating
+make check
+
+# Show status of all notebooks
+make list
+```
+
+See [utils/README_CONVERTER.md](utils/README_CONVERTER.md) for detailed converter documentation.
+
+#### Save notebook to executable script (.ipynb to .lisp)
+You can use the JupyterLab "File > Save & Export ... > As Executable Script" command to save a notebook as a .lisp file.
+
+<img src="utils/image.png" alt="JupyterLab 'File > Save & Export ... > As Executable Script' menu screenshot" width="25%">
+
+### Running ACL2 and Jupyter with prebuilt Docker image
+
+.devcontainer/devcontainer.json is configured to run ghcr.io/jimwhite/acl2-jupyter:latest which is built by https://github.com/jimwhite/acl2-jupyter.
+
+Detailed how to instructions for running in GitHub Codespaces (for free!) are at https://github.com/jimwhite/acl2-jupyter?tab=readme-ov-file#using-a-prebuilt-image-in-a-github-codespace-free
+
 
 ## Resources
 
@@ -81,6 +130,7 @@ cert.pl experiments/lists/experiment-01-list-basics.lisp
 - [ACL2 Manual](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/)
 - [Software Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/)
 - [Quick Reference](notes/acl2-quick-reference.md) - Local guide to common ACL2 patterns
+- [ACL2-Jupyter Docker Image](https://github.com/jimwhite/acl2-jupyter) - GitHub project that builds the image for the devcontainer
 
 ## License
 
