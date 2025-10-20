@@ -13,6 +13,8 @@ This repository contains theorem-proving experiments using the ACL2 automated re
 ## Project Structure
 
 ```
+certify-all.lisp             Top-level book to verify all experiments build
+
 experiments/
 ├── arithmetic/              Arithmetic theorems (hello world, induction, basics, natural numbers)
 │   ├── experiment-01-hello-world.lisp
@@ -26,7 +28,7 @@ experiments/
 │   └── experiment-02-higher-order-product.lisp
 ├── logic/                   (planned) Logical connectives and reasoning
 ├── data-structures/         (planned) Maps and other data structures
-├── challenge-problems.lisp  Real 3-4 star challenges from SWF (6 theorems)
+├── challenge-problems.lisp  Real 3-4 star challenges from SWF (6 theorems, WIP)
 └── trivial-swf-exercises.lisp  SWF challenges that ACL2 proves automatically
 
 utils/
@@ -81,6 +83,13 @@ acl2
 ```bash
 cert.pl path/to/book.lisp
 ```
+
+**Verify all experiments build successfully:**
+```bash
+cert.pl certify-all.lisp
+```
+
+The `cert.pl` tool is part of the ACL2 installation (typically in `books/build/` within the ACL2 distribution). It automatically certifies dependencies in parallel. The [certify-all.lisp](certify-all.lisp) book at the repository root includes all completed experiments - if it certifies, all theorems are verified.
 
 ### Development Workflow for Experiments
 
